@@ -102,6 +102,7 @@ textarea.form-input{min-height:80px;resize:vertical;font-family:inherit;line-hei
     <div class="sep"></div>
     <div class="proj-name" id="projName" onclick="openModal('projectModal')">未选择项目</div>
     <div class="actions">
+      <input id="ghToken" type="password" placeholder="GitHub Token" oninput="localStorage.setItem('wh_token',this.value)" style="width:160px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:11px;outline:none">
       <button class="icon-btn" onclick="toggleGitHub()" title="GitHub同步">⬡</button>
       <button class="icon-btn" onclick="toggleTheme()" title="切换主题">◐</button>
       <button class="icon-btn" onclick="openModal('projectModal')" title="项目管理">📁</button>
@@ -126,7 +127,6 @@ textarea.form-input{min-height:80px;resize:vertical;font-family:inherit;line-hei
   <div class="editor-body"><textarea id="editor" placeholder="开始写作..." oninput="onInput()"></textarea></div>
   <div class="gh-panel" id="ghPanel">
     <div class="row">
-      <input id="ghToken" type="password" placeholder="ghp_..." style="max-width:200px" oninput="localStorage.setItem('wh_token',this.value)">
       <select id="ghRepo"><option value="zizegak916-glitch/renjianrengcun">renjianrengcun</option><option value="zizegak916-glitch/writing-workshop">writing-workshop</option></select>
       <button class="btn btn-primary btn-sm" onclick="ghFetch()">连接</button>
       <button class="btn btn-primary btn-sm" onclick="ghImport()" style="background:var(--green)">📥 导入</button>
