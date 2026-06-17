@@ -10,10 +10,9 @@
 [data-theme="light"]{--bg:#f8f9fa;--surface:#fff;--surface2:#f1f3f5;--border:#dee2e6;--text:#212529;--text2:#495057;--text3:#868e96}
 html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
 .layout{display:flex;height:100vh;overflow:hidden}
-/* Topbar */
 .topbar{display:flex;align-items:center;gap:12px;padding:0 16px;height:48px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
 .topbar .logo{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
-.topbar .logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.topbar .logo em{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:normal}
 .topbar .sep{width:1px;height:24px;background:var(--border)}
 .topbar .proj-name{font-size:13px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:6px}
 .topbar .proj-name:hover{background:var(--surface2)}
@@ -24,44 +23,36 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .btn-sm{padding:4px 10px;font-size:11px}
 .icon-btn{width:32px;height:32px;border-radius:8px;border:none;background:transparent;color:var(--text2);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.15s}
 .icon-btn:hover{background:var(--surface2);color:var(--text)}
-/* Sidebar */
 .sidebar{width:280px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden}
 .sidebar-tabs{display:flex;border-bottom:1px solid var(--border)}
-.sidebar-tabs button{flex:1;padding:10px 4px;border:none;background:transparent;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+.sidebar-tabs button{flex:1;padding:10px 4px;border:none;background:transparent;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;transition:.15s;-webkit-tap-highlight-color:transparent}
 .sidebar-tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
 .sidebar-body{flex:1;overflow-y:auto;padding:8px}
 .sidebar-body::-webkit-scrollbar{width:4px}
 .sidebar-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-/* Chapter list */
-.ch-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:.15s;font-size:13px;margin-bottom:2px}
+.ch-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:.15s;font-size:13px;margin-bottom:2px;-webkit-tap-highlight-color:transparent}
 .ch-item:hover{background:var(--surface2)}
-.ch-item.active{background:var(--accent);background:rgba(99,102,241,.15);color:var(--accent)}
+.ch-item.active{background:rgba(99,102,241,.15);color:var(--accent)}
 .ch-item .ch-num{width:20px;text-align:right;color:var(--text3);font-size:11px;flex-shrink:0}
 .ch-item .ch-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ch-item .ch-wc{font-size:11px;color:var(--text3);flex-shrink:0}
-.ch-item .ch-gh{font-size:10px;color:var(--green);flex-shrink:0;display:none}
-.ch-item.has-gh .ch-gh{display:inline}
-/* Character card */
 .char-card{padding:10px;border:1px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:12px}
 .char-card .name{font-weight:600;font-size:13px;margin-bottom:4px}
 .char-card .role{color:var(--accent);font-size:11px;margin-bottom:4px}
 .char-card .desc{color:var(--text2);line-height:1.5}
-/* Editor */
 .editor-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .editor-toolbar{display:flex;align-items:center;gap:4px;padding:6px 16px;border-bottom:1px solid var(--border);background:var(--surface);flex-wrap:wrap}
 .editor-toolbar .sep{width:1px;height:20px;background:var(--border);margin:0 4px}
 .editor-toolbar .tool-btn{padding:4px 8px;border-radius:6px;border:none;background:transparent;color:var(--text2);cursor:pointer;font-size:12px;transition:.15s}
 .editor-toolbar .tool-btn:hover{background:var(--surface2);color:var(--text)}
-.editor-toolbar .tool-btn.active{color:var(--accent)}
 .editor-toolbar .info{font-size:11px;color:var(--text3);margin-left:auto}
 .editor-title{padding:16px 32px 8px}
-.editor-title input{width:100%;border:none;background:transparent;color:var(--text);font-size:20px;font-weight:700;outline:none;font-family:inherit}
+.editor-title input{width:100%;border:none;background:transparent;color:var(--text);font-size:20px;font-weight:700;outline:none}
 .editor-title input::placeholder{color:var(--text3)}
 .editor-meta{padding:0 32px 8px;font-size:11px;color:var(--text3);display:flex;gap:16px}
 .editor-body{flex:1;overflow-y:auto;padding:0 32px 60px}
 .editor-body textarea{width:100%;min-height:100%;border:none;background:transparent;color:var(--text);font-size:16px;line-height:2;font-family:"Noto Serif SC","Source Han Serif SC","STSong",Georgia,serif;outline:none;resize:none}
 .editor-body textarea::placeholder{color:var(--text3)}
-/* GitHub Panel */
 .gh-panel{background:var(--surface);border-top:1px solid var(--border);padding:10px 16px;display:none}
 .gh-panel.show{display:block}
 .gh-panel .row{display:flex;gap:8px;align-items:center;margin-bottom:6px}
@@ -71,7 +62,6 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .gh-panel .file-list{max-height:150px;overflow-y:auto;font-size:11px;margin-top:6px}
 .gh-panel .file-item{display:flex;align-items:center;gap:6px;padding:3px 6px;border-radius:4px;cursor:pointer}
 .gh-panel .file-item:hover{background:var(--surface2)}
-/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:1000}
 .modal-overlay.show{display:flex}
 .modal{background:var(--surface);border-radius:16px;width:min(480px,92vw);max-height:80vh;overflow:hidden;display:flex;flex-direction:column}
@@ -84,41 +74,31 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .form-input{width:100%;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:13px;outline:none}
 .form-input:focus{border-color:var(--accent)}
 textarea.form-input{min-height:80px;resize:vertical;font-family:inherit;line-height:1.6}
-/* Toast */
 .toast{position:fixed;bottom:20px;right:20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:13px;display:none;z-index:2000;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:slideIn .3s}
 .toast.show{display:flex;align-items:center;gap:8px}
 @keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-/* Empty state */
-.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:var(--text3);font-size:14px;gap:8px}
-.empty .big{font-size:48px;opacity:.3}
-/* Responsive */
-@media(max-width:768px){.sidebar{width:60px}.sidebar-tabs button{font-size:0;padding:10px 0}.sidebar-tabs button::after{font-size:16px}.sidebar-body{padding:4px}.ch-item .ch-title,.ch-item .ch-wc{display:none}.char-card .desc,.char-card .role{display:none}}
+@media(max-width:768px){.sidebar{width:60px}.sidebar-tabs button{font-size:11px;padding:8px 2px}.sidebar-body{padding:4px}.ch-item .ch-title,.ch-item .ch-wc{display:none}.char-card .desc,.char-card .role{display:none}.editor-title{padding:12px 16px 8px}.editor-body{padding:0 16px 60px}}
 </style>
 </head>
 <body>
 <div class="layout">
-<!-- Sidebar -->
 <div class="sidebar">
-  <div class="sidebar-tabs">
-    <button class="active" onclick="switchTab('chapters',this)">📖 章节</button>
-    <button onclick="switchTab('chars',this)">👤 人物</button>
-    <button onclick="switchTab('world',this)">🌍 世界</button>
-    <button onclick="switchTab('notes',this)">📝 笔记</button>
+  <div class="sidebar-tabs" id="sidebarTabs">
+    <button class="active" data-tab="chapters">📖 章节</button>
+    <button data-tab="chars">👤 人物</button>
+    <button data-tab="world">🌍 世界</button>
+    <button data-tab="notes">📝 笔记</button>
   </div>
   <div class="sidebar-body">
-    <div id="tab-chapters">
-      <div id="chapterList"></div>
-      <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="addChapter()">＋ 新章节</button>
-    </div>
+    <div id="tab-chapters"><div id="chapterList"></div><button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="addChapter()">＋ 新章节</button></div>
     <div id="tab-chars" style="display:none"><div id="charList"></div><button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="openModal('charModal')">＋ 新人物</button></div>
     <div id="tab-world" style="display:none"><div id="worldList"></div><button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="addWorld()">＋ 新条目</button></div>
     <div id="tab-notes" style="display:none"><div id="noteList"></div><button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="addNote()">＋ 新笔记</button></div>
   </div>
 </div>
-<!-- Main -->
 <div class="editor-wrap">
   <div class="topbar">
-    <div class="logo">✒️ <span>写作工坊 × 人间仍存</span></div>
+    <div class="logo">✒️ <em>写作工坊 × 人间仍存</em></div>
     <div class="sep"></div>
     <div class="proj-name" id="projName" onclick="openModal('projectModal')">未选择项目</div>
     <div class="actions">
@@ -139,26 +119,24 @@ textarea.form-input{min-height:80px;resize:vertical;font-family:inherit;line-hei
     <div class="sep"></div>
     <button class="tool-btn" onclick="exportTxt()">💾 导出</button>
     <button class="tool-btn" onclick="ghPush()" title="推送到GitHub">⬆ 推送</button>
-    <span class="info"><span id="wordCount">0</span>字 · <span id="charCount">0</span>段</span>
+    <span class="info"><span id="wordCount">0</span>字 · <span id="paraCount">0</span>段</span>
   </div>
   <div class="editor-title"><input id="chTitle" placeholder="章节标题..." oninput="S.dirty=true"></div>
-  <div class="editor-meta"><span id="readTime">预计阅读 0 分钟</span><span id="ghStatus2"></span></div>
+  <div class="editor-meta"><span id="readTime">预计阅读 0 分钟</span></div>
   <div class="editor-body"><textarea id="editor" placeholder="开始写作..." oninput="onInput()"></textarea></div>
-  <!-- GitHub Panel -->
   <div class="gh-panel" id="ghPanel">
     <div class="row">
       <input id="ghToken" type="password" placeholder="ghp_..." style="max-width:200px" oninput="localStorage.setItem('wh_token',this.value)">
       <select id="ghRepo"><option value="zizegak916-glitch/renjianrengcun">renjianrengcun</option><option value="zizegak916-glitch/writing-workshop">writing-workshop</option></select>
       <button class="btn btn-primary btn-sm" onclick="ghFetch()">连接</button>
       <button class="btn btn-primary btn-sm" onclick="ghImport()" style="background:var(--green)">📥 导入</button>
-      <button class="btn btn-ghost btn-sm" onclick="ghSyncAll()">🔄 同步全部</button>
+      <button class="btn btn-ghost btn-sm" onclick="ghSyncAll()">🔄 同步</button>
     </div>
     <div class="status" id="ghStatus">就绪</div>
     <div class="file-list" id="ghFiles"></div>
   </div>
 </div>
 </div>
-<!-- Modals -->
 <div class="modal-overlay" id="projectModal"><div class="modal">
   <div class="modal-header"><h3>项目管理</h3><button class="icon-btn" onclick="closeModal('projectModal')">✕</button></div>
   <div class="modal-body">
@@ -179,253 +157,288 @@ textarea.form-input{min-height:80px;resize:vertical;font-family:inherit;line-hei
   <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('charModal')">取消</button><button class="btn btn-primary" onclick="saveChar()">保存</button></div>
 </div></div>
 <div class="toast" id="toast"></div>
-
 <script>
-// ═══ IndexedDB ═══
 const DB='WritingHub',VER=1;let db;
-function openDB(){return new Promise((r,j)=>{const q=indexedDB.open(DB,VER);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains('projects'))d.createObjectStore('projects',{keyPath:'id',autoIncrement:true});let s;if(!d.objectStoreNames.contains('chapters'))s=d.createObjectStore('chapters',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('chapters');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('characters'))s=d.createObjectStore('characters',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('characters');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('world'))s=d.createObjectStore('world',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('world');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('notes'))s=d.createObjectStore('notes',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('notes');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');};q.onsuccess=e=>{db=e.target.result;r(db)};q.onerror=e=>j(e.target.error)});}
-function dbP(s,v){return new Promise((r,j)=>{const t=db.transaction(s,'readwrite'),q=t.objectStore(s).put(v);q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});}
-function dbG(s,id){return new Promise((r,j)=>{const t=db.transaction(s,'readonly'),q=t.objectStore(s).get(id);q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});}
-function dbA(s){return new Promise((r,j)=>{const t=db.transaction(s,'readonly'),q=t.objectStore(s).getAll();q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});}
-function dbI(s,idx,v){return new Promise((r,j)=>{const t=db.transaction(s,'readonly'),st=t.objectStore(s),q=st.index(idx).getAll(v);q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});}
-function dbD(s,id){return new Promise((r,j)=>{const t=db.transaction(s,'readwrite');t.objectStore(s).delete(id);t.oncomplete=()=>r();t.onerror=()=>j(t.error)});}
+function openDB(){return new Promise(function(r,j){var q=indexedDB.open(DB,VER);q.onupgradeneeded=function(e){var d=e.target.result,s;if(!d.objectStoreNames.contains('projects'))d.createObjectStore('projects',{keyPath:'id',autoIncrement:true});if(!d.objectStoreNames.contains('chapters'))s=d.createObjectStore('chapters',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('chapters');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('characters'))s=d.createObjectStore('characters',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('characters');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('world'))s=d.createObjectStore('world',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('world');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');if(!d.objectStoreNames.contains('notes'))s=d.createObjectStore('notes',{keyPath:'id',autoIncrement:true});else s=e.target.transaction.objectStore('notes');if(!s.indexNames.contains('project_id'))s.createIndex('project_id','project_id');};q.onsuccess=function(e){db=e.target.result;r(db)};q.onerror=function(e){j(e.target.error)};});}
+function dbP(s,v){return new Promise(function(r,j){var t=db.transaction(s,'readwrite'),q=t.objectStore(s).put(v);q.onsuccess=function(){r(q.result)};q.onerror=function(){j(q.error)};});}
+function dbG(s,id){return new Promise(function(r,j){var t=db.transaction(s,'readonly'),q=t.objectStore(s).get(id);q.onsuccess=function(){r(q.result)};q.onerror=function(){j(q.error)};});}
+function dbA(s){return new Promise(function(r,j){var t=db.transaction(s,'readonly'),q=t.objectStore(s).getAll();q.onsuccess=function(){r(q.result)};q.onerror=function(){j(q.error)};});}
+function dbI(s,idx,v){return new Promise(function(r,j){var t=db.transaction(s,'readonly'),st=t.objectStore(s),q=st.index(idx).getAll(v);q.onsuccess=function(){r(q.result)};q.onerror=function(){j(q.error)};});}
+function dbD(s,id){return new Promise(function(r,j){var t=db.transaction(s,'readwrite');t.objectStore(s).delete(id);t.oncomplete=function(){r()};t.onerror=function(){j(t.error)};});}
+var S={proj:null,ch:null,chapters:[],chars:[],world:[],notes:[],dirty:false,fontSize:16};
+var ghFiles=[];
 
-// ═══ State ═══
-const S={proj:null,ch:null,chapters:[],chars:[],world:[],notes:[],dirty:false,fontSize:16};
-let ghFiles=[];
+// Tabs
+document.getElementById('sidebarTabs').addEventListener('click',function(e){
+  var btn=e.target.closest('button');
+  if(!btn)return;
+  var tab=btn.getAttribute('data-tab');
+  if(!tab)return;
+  var tabs=document.querySelectorAll('.sidebar-tabs button');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('active');
+  btn.classList.add('active');
+  var panels=['chapters','chars','world','notes'];
+  for(var i=0;i<panels.length;i++){
+    var el=document.getElementById('tab-'+panels[i]);
+    if(el)el.style.display=panels[i]===tab?'':'none';
+  }
+});
 
-// ═══ Init ═══
-async function init(){
-  await openDB();
-  document.getElementById('ghToken').value=localStorage.getItem('wh_token')||'';
-  const projs=await dbA('projects');
-  if(projs.length)await loadProject(projs.sort((a,b)=>(b.updated_at||0)-(a.updated_at||0))[0].id);
-  setInterval(()=>{if(S.dirty&&S.ch)saveCh()},30000);
+function init(){
+  openDB().then(function(){
+    document.getElementById('ghToken').value=localStorage.getItem('wh_token')||'';
+    return dbA('projects');
+  }).then(function(ps){
+    if(ps&&ps.length){
+      ps.sort(function(a,b){return(b.updated_at||0)-(a.updated_at||0)});
+      return loadProject(ps[0].id);
+    }
+  }).catch(function(e){console.error('Init error:',e);});
+  setInterval(function(){if(S.dirty&&S.ch)saveCh()},30000);
 }
 
-// ═══ Theme ═══
 function toggleTheme(){
-  const t=document.documentElement.getAttribute('data-theme');
-  document.documentElement.setAttribute('data-theme',t==='light'?'dark':'light');
-  localStorage.setItem('wh_theme',t==='light'?'dark':'light');
+  var t=document.documentElement.getAttribute('data-theme');
+  var next=t==='light'?'dark':'light';
+  document.documentElement.setAttribute('data-theme',next);
+  localStorage.setItem('wh_theme',next);
 }
-(function(){const t=localStorage.getItem('wh_theme')||'dark';document.documentElement.setAttribute('data-theme',t)})();
+(function(){var t=localStorage.getItem('wh_theme')||'dark';document.documentElement.setAttribute('data-theme',t)})();
 
-// ═══ Projects ═══
-async function loadProjects(){
-  const ps=await dbA('projects');
-  const el=document.getElementById('projectList');
-  if(!ps.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3)">暂无项目</div>';return;}
-  el.innerHTML=ps.sort((a,b)=>(b.updated_at||0)-(a.updated_at||0)).map(p=>'<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;margin-bottom:4px;border:1px solid var(--border)" onclick="loadProject('+p.id+');closeModal('projectModal')"><span style="flex:1;font-size:13px">'+p.name+'</span><span style="font-size:11px;color:var(--text3)">'+new Date(p.updated_at).toLocaleDateString()+'</span></div>').join('');
+function loadProjects(){
+  dbA('projects').then(function(ps){
+    var el=document.getElementById('projectList');
+    if(!ps||!ps.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3)">暂无项目</div>';return;}
+    ps.sort(function(a,b){return(b.updated_at||0)-(a.updated_at||0)});
+    el.innerHTML=ps.map(function(p){
+      return '<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;margin-bottom:4px;border:1px solid var(--border)" onclick="loadProject('+p.id+');closeModal(\'projectModal\')"><span style="flex:1;font-size:13px">'+p.name+'</span><span style="font-size:11px;color:var(--text3)">'+new Date(p.updated_at).toLocaleDateString()+'</span></div>';
+    }).join('');
+  });
 }
-async function loadProject(id){
-  const p=await dbG('projects',id);if(!p)return;
-  S.proj=p;S.chapters=await dbI('chapters','project_id',id);S.chars=await dbI('characters','project_id',id);S.world=await dbI('world','project_id',id);S.notes=await dbI('notes','project_id',id);
-  S.chapters.sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));
-  document.getElementById('projName').textContent=p.name;
-  renderChapters();renderChars();renderWorld();renderNotes();
-  if(S.chapters.length)selectCh(S.chapters[0].id);else{document.getElementById('editor').value='';document.getElementById('chTitle').value='';S.ch=null;}
+function loadProject(id){
+  return dbG('projects',id).then(function(p){
+    if(!p)return;
+    S.proj=p;
+    return Promise.all([dbI('chapters','project_id',id),dbI('characters','project_id',id),dbI('world','project_id',id),dbI('notes','project_id',id)]);
+  }).then(function(arr){
+    if(!arr)return;
+    S.chapters=arr[0]||[];S.chars=arr[1]||[];S.world=arr[2]||[];S.notes=arr[3]||[];
+    S.chapters.sort(function(a,b){return(a.sort_order||0)-(b.sort_order||0)});
+    document.getElementById('projName').textContent=S.proj.name;
+    renderChapters();renderChars();renderWorld();renderNotes();
+    if(S.chapters.length)selectCh(S.chapters[0].id);
+    else{document.getElementById('editor').value='';document.getElementById('chTitle').value='';S.ch=null;}
+  });
 }
-async function createProject(){
-  const name=document.getElementById('newProjName').value.trim();if(!name)return toast('请输入项目名称');
-  const now=Date.now();
-  const id=await dbP('projects',{name,description:document.getElementById('newProjDesc').value.trim(),created_at:now,updated_at:now,gh_repo:''});
-  closeModal('projectModal');document.getElementById('newProjName').value='';document.getElementById('newProjDesc').value='';
-  await loadProject(id);toast('✅ 已创建: '+name);
-}
-async function deleteProject(id){
-  if(!confirm('确定删除此项目？'))return;
-  const chs=await dbI('chapters','project_id',id);for(const c of chs)await dbD('chapters',c.id);
-  const cs=await dbI('characters','project_id',id);for(const c of cs)await dbD('characters',c.id);
-  const ws=await dbI('world','project_id',id);for(const w of ws)await dbD('world',w.id);
-  const ns=await dbI('notes','project_id',id);for(const n of ns)await dbD('notes',n.id);
-  await dbD('projects',id);S.proj=null;document.getElementById('projName').textContent='未选择项目';
-  renderChapters();renderChars();renderWorld();renderNotes();toast('✅ 已删除');
+function createProject(){
+  var name=document.getElementById('newProjName').value.trim();
+  if(!name)return toast('请输入项目名称');
+  var now=Date.now();
+  dbP('projects',{name:name,description:document.getElementById('newProjDesc').value.trim(),created_at:now,updated_at:now,gh_repo:''}).then(function(id){
+    closeModal('projectModal');document.getElementById('newProjName').value='';document.getElementById('newProjDesc').value='';
+    return loadProject(id);
+  }).then(function(){toast('✅ 已创建')});
 }
 
-// ═══ Chapters ═══
 function renderChapters(){
-  const el=document.getElementById('chapterList');
+  var el=document.getElementById('chapterList');
   if(!S.chapters.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3);font-size:12px">暂无章节</div>';return;}
-  el.innerHTML=S.chapters.map((c,i)=>'<div class="ch-item'+(S.ch&&S.ch.id===c.id?' active':'')+(c.gh_path?' has-gh':'')+'" onclick="selectCh('+c.id+')"><span class="ch-num">'+(i+1)+'</span><span class="ch-title">'+(c.title||'未命名')+'</span><span class="ch-wc">'+(c.word_count||0)+'字</span><span class="ch-gh">⬡</span></div>').join('');
+  el.innerHTML=S.chapters.map(function(c,i){
+    var active=S.ch&&S.ch.id===c.id?' active':'';
+    return '<div class="ch-item'+active+'" onclick="selectCh('+c.id+')"><span class="ch-num">'+(i+1)+'</span><span class="ch-title">'+(c.title||'未命名')+'</span><span class="ch-wc">'+(c.word_count||0)+'字</span></div>';
+  }).join('');
 }
-async function selectCh(id){
-  if(S.dirty&&S.ch)await saveCh();
-  const ch=await dbG('chapters',id);if(!ch)return;
-  S.ch=ch;
-  document.getElementById('chTitle').value=ch.title||'';
-  document.getElementById('editor').value=ch.content||'';
-  document.getElementById('fontSize').textContent=S.fontSize;
-  onInput();renderChapters();
+function selectCh(id){
+  if(S.dirty&&S.ch)saveCh();
+  dbG('chapters',id).then(function(ch){
+    if(!ch)return;
+    S.ch=ch;
+    document.getElementById('chTitle').value=ch.title||'';
+    document.getElementById('editor').value=ch.content||'';
+    onInput();renderChapters();
+  });
 }
-async function addChapter(){
+function addChapter(){
   if(!S.proj)return toast('请先选择项目');
-  const now=Date.now();
-  const id=await dbP('chapters',{project_id:S.proj.id,title:'新章节',content:'',word_count:0,sort_order:S.chapters.length,created_at:now});
-  await loadProject(S.proj.id);selectCh(id);
+  var now=Date.now();
+  dbP('chapters',{project_id:S.proj.id,title:'新章节',content:'',word_count:0,sort_order:S.chapters.length,created_at:now}).then(function(id){
+    return loadProject(S.proj.id);
+  }).then(function(){
+    if(S.chapters.length)selectCh(S.chapters[S.chapters.length-1].id);
+  });
 }
-async function saveCh(){
+function saveCh(){
   if(!S.ch)return;
-  const content=document.getElementById('editor').value;
-  const title=document.getElementById('chTitle').value;
+  var content=document.getElementById('editor').value;
+  var title=document.getElementById('chTitle').value;
   S.ch.content=content;S.ch.title=title;
   S.ch.word_count=content.replace(/[\u4e00-\u9fff]/g,'').length;
-  await dbP('chapters',S.ch);S.dirty=false;S.chapters.sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));renderChapters();
+  dbP('chapters',S.ch).then(function(){S.dirty=false;S.chapters.sort(function(a,b){return(a.sort_order||0)-(b.sort_order||0)});renderChapters();});
 }
 function onInput(){
   S.dirty=true;
-  const t=document.getElementById('editor').value;
-  const wc=t.replace(/[\u4e00-\u9fff]/g,'').length;
-  const paras=t.split(/\n/).filter(p=>p.trim()).length;
+  var t=document.getElementById('editor').value;
+  var wc=t.replace(/[\u4e00-\u9fff]/g,'').length;
+  var paras=t.split(/\n/).filter(function(p){return p.trim()}).length;
   document.getElementById('wordCount').textContent=wc;
-  document.getElementById('charCount').textContent=paras;
+  document.getElementById('paraCount').textContent=paras;
   document.getElementById('readTime').textContent='预计阅读 '+Math.max(1,Math.round(wc/500))+' 分钟';
 }
 
-// ═══ Characters ═══
 function renderChars(){
-  const el=document.getElementById('charList');
+  var el=document.getElementById('charList');
   if(!S.chars.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3);font-size:12px">暂无人物</div>';return;}
-  el.innerHTML=S.chars.map(c=>'<div class="char-card"><div class="name">'+c.name+'</div><div class="role">'+(c.role||'')+'</div><div class="desc">'+(c.description||'')+'</div></div>').join('');
+  el.innerHTML=S.chars.map(function(c){
+    return '<div class="char-card"><div class="name">'+c.name+'</div><div class="role">'+(c.role||'')+'</div><div class="desc">'+(c.description||'')+'</div></div>';
+  }).join('');
 }
-async function saveChar(){
-  const name=document.getElementById('charName').value.trim();if(!name)return;
+function saveChar(){
+  var name=document.getElementById('charName').value.trim();
+  if(!name)return;
   if(!S.proj)return toast('请先选择项目');
-  await dbP('characters',{project_id:S.proj.id,name,role:document.getElementById('charRole').value.trim(),description:document.getElementById('charDesc').value.trim()});
-  closeModal('charModal');document.getElementById('charName').value='';document.getElementById('charRole').value='';document.getElementById('charDesc').value='';
-  S.chars=await dbI('characters','project_id',S.proj.id);renderChars();toast('✅ 已添加: '+name);
+  dbP('characters',{project_id:S.proj.id,name:name,role:document.getElementById('charRole').value.trim(),description:document.getElementById('charDesc').value.trim()}).then(function(){
+    closeModal('charModal');document.getElementById('charName').value='';document.getElementById('charRole').value='';document.getElementById('charDesc').value='';
+    return dbI('characters','project_id',S.proj.id);
+  }).then(function(cs){S.chars=cs;renderChars();toast('✅ 已添加: '+name);});
 }
 
-// ═══ World ═══
 function renderWorld(){
-  const el=document.getElementById('worldList');
+  var el=document.getElementById('worldList');
   if(!S.world.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3);font-size:12px">暂无条目</div>';return;}
-  el.innerHTML=S.world.map(w=>'<div class="char-card"><div class="name">'+w.title+'</div><div class="desc">'+(w.content||'').substring(0,100)+'</div></div>').join('');
+  el.innerHTML=S.world.map(function(w){
+    return '<div class="char-card"><div class="name">'+w.title+'</div><div class="desc">'+(w.content||'').substring(0,100)+'</div></div>';
+  }).join('');
 }
-async function addWorld(){
+function addWorld(){
   if(!S.proj)return toast('请先选择项目');
-  const title=prompt('条目名称:');if(!title)return;
-  const content=prompt('内容:')||'';
-  await dbP('world',{project_id:S.proj.id,title,content});
-  S.world=await dbI('world','project_id',S.proj.id);renderWorld();toast('✅ 已添加');
+  var title=prompt('条目名称:');if(!title)return;
+  var content=prompt('内容:')||'';
+  dbP('world',{project_id:S.proj.id,title:title,content:content}).then(function(){
+    return dbI('world','project_id',S.proj.id);
+  }).then(function(ws){S.world=ws;renderWorld();toast('✅ 已添加');});
 }
 
-// ═══ Notes ═══
 function renderNotes(){
-  const el=document.getElementById('noteList');
+  var el=document.getElementById('noteList');
   if(!S.notes.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3);font-size:12px">暂无笔记</div>';return;}
-  el.innerHTML=S.notes.map(n=>'<div class="char-card"><div class="name">'+n.title+'</div><div class="desc">'+(n.content||'').substring(0,80)+'</div></div>').join('');
+  el.innerHTML=S.notes.map(function(n){
+    return '<div class="char-card"><div class="name">'+n.title+'</div><div class="desc">'+(n.content||'').substring(0,80)+'</div></div>';
+  }).join('');
 }
-async function addNote(){
+function addNote(){
   if(!S.proj)return toast('请先选择项目');
-  const title=prompt('笔记标题:');if(!title)return;
-  const content=prompt('内容:')||'';
-  await dbP('notes',{project_id:S.proj.id,title,content,updated_at:Date.now()});
-  S.notes=await dbI('notes','project_id',S.proj.id);renderNotes();toast('✅ 已添加');
+  var title=prompt('笔记标题:');if(!title)return;
+  var content=prompt('内容:')||'';
+  dbP('notes',{project_id:S.proj.id,title:title,content:content,updated_at:Date.now()}).then(function(){
+    return dbI('notes','project_id',S.proj.id);
+  }).then(function(ns){S.notes=ns;renderNotes();toast('✅ 已添加');});
 }
 
-// ═══ Editor ═══
 function fmt(type){
-  const el=document.getElementById('editor'),s=el.selectionStart,e=el.selectionEnd,t=el.value;
-  if(type==='bold'){el.value=t.slice(0,s)+'**'+t.slice(s,e)+'**'+t.slice(e);}
-  else if(type==='italic'){el.value=t.slice(0,s)+'__'+t.slice(s,e)+'__'+t.slice(e);}
-  else if(type==='divider'){el.value=t.slice(0,s)+'\n────────\n'+t.slice(e);}
-  else if(type==='quote'){el.value=t.slice(0,s)+'「'+t.slice(s,e)+'」'+t.slice(e);}
+  var el=document.getElementById('editor'),s=el.selectionStart,e=el.selectionEnd,t=el.value;
+  if(type==='bold')el.value=t.slice(0,s)+'**'+t.slice(s,e)+'**'+t.slice(e);
+  else if(type==='italic')el.value=t.slice(0,s)+'__'+t.slice(s,e)+'__'+t.slice(e);
+  else if(type==='divider')el.value=t.slice(0,s)+'\n────────\n'+t.slice(e);
+  else if(type==='quote')el.value=t.slice(0,s)+'「'+t.slice(s,e)+'」'+t.slice(e);
   onInput();
 }
 function changeFont(d){S.fontSize=Math.max(12,Math.min(24,S.fontSize+d));document.getElementById('editor').style.fontSize=S.fontSize+'px';document.getElementById('fontSize').textContent=S.fontSize;}
 function exportTxt(){
-  const t=document.getElementById('editor').value;if(!t)return toast('无内容');
-  const title=document.getElementById('chTitle').value||'未命名';
-  const b=new Blob([t],{type:'text/plain'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=title+'.txt';a.click();toast('✅ 已导出');
+  var t=document.getElementById('editor').value;if(!t)return toast('无内容');
+  var title=document.getElementById('chTitle').value||'未命名';
+  var b=new Blob([t],{type:'text/plain'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=title+'.txt';a.click();toast('✅ 已导出');
 }
 
-// ═══ GitHub ═══
 function toggleGitHub(){document.getElementById('ghPanel').classList.toggle('show');}
-async function ghFetch(){
-  const token=document.getElementById('ghToken').value.trim();
-  const repo=document.getElementById('ghRepo').value;
+function ghFetch(){
+  var token=document.getElementById('ghToken').value.trim();
+  var repo=document.getElementById('ghRepo').value;
   if(!token)return toast('请输入Token');
   document.getElementById('ghStatus').textContent='⏳ 连接中...';
-  try{
-    const r=await fetch('https://api.github.com/repos/'+repo+'/contents/',{headers:{'Authorization':'token '+token}});
+  fetch('https://api.github.com/repos/'+repo+'/contents/',{headers:{'Authorization':'token '+token}}).then(function(r){
     if(!r.ok)throw new Error('HTTP '+r.status);
-    const files=await r.json();ghFiles=files.filter(f=>f.name.endsWith('.txt')||f.name.endsWith('.md'));
-    document.getElementById('ghFiles').innerHTML=ghFiles.map(f=>'<div class="file-item" onclick="ghPreview(\''+f.download_url+'\',\''+f.name.replace(/'/g,"\\'")+'\')"><span>'+(f.name.endsWith('.md')?'📄':'📝')+'</span><span style="flex:1">'+f.name+'</span><span style="color:var(--text3)">'+(f.size/1024).toFixed(1)+'KB</span></div>').join('');
+    return r.json();
+  }).then(function(files){
+    ghFiles=files.filter(function(f){return f.name.endsWith('.txt')||f.name.endsWith('.md')});
+    document.getElementById('ghFiles').innerHTML=ghFiles.map(function(f){
+      return '<div class="file-item"><span>'+(f.name.endsWith('.md')?'📄':'📝')+'</span><span style="flex:1">'+f.name+'</span><span style="color:var(--text3)">'+(f.size/1024).toFixed(1)+'KB</span></div>';
+    }).join('');
     document.getElementById('ghStatus').textContent='✅ '+ghFiles.length+' 个文件';
-  }catch(e){document.getElementById('ghStatus').textContent='❌ '+e.message;}
+  }).catch(function(e){document.getElementById('ghStatus').textContent='❌ '+e.message;});
 }
-async function ghPreview(url,name){const r=await fetch(url);const t=await r.text();toast('📄 '+name+': '+t.length+'字');}
-async function ghImport(){
-  const token=document.getElementById('ghToken').value.trim();
-  const repo=document.getElementById('ghRepo').value;
+function ghImport(){
+  var token=document.getElementById('ghToken').value.trim();
+  var repo=document.getElementById('ghRepo').value;
   if(!token)return toast('请先连接');
-  if(!ghFiles.length){await ghFetch();if(!ghFiles.length)return;}
+  if(!ghFiles.length){ghFetch();return;}
   document.getElementById('ghStatus').textContent='⏳ 导入中...';
-  let name=repo.split('/')[1]||repo;
-  let existing=await dbA('projects');let proj=existing.find(p=>p.name===name);
-  if(!proj){const now=Date.now();const id=await dbP('projects',{name,description:'从GitHub导入: '+repo,created_at:now,updated_at:now,gh_repo:repo});proj=await dbG('projects',id);}
-  let order=0;
-  for(const f of ghFiles){
-    try{
-      const r=await fetch(f.download_url);const text=await r.text();
-      const title=f.name.replace(/\.txt$/,'').replace(/^人间仍存_正骨版_\d+_?/,'').replace(/^第?\d+章[　\s]*/,'')||f.name;
-      const existing=await dbI('chapters','project_id',proj.id);
-      const dup=existing.find(c=>c.source_file===f.name);
-      if(dup){dup.content=text;dup.word_count=text.replace(/[^\u4e00-\u9fff]/g,'').length;dup.gh_sha=f.sha;await dbP('chapters',dup);}
-      else await dbP('chapters',{project_id:proj.id,title,content:text,word_count:text.replace(/[^\u4e00-\u9fff]/g,'').length,sort_order:order++,source_file:f.name,gh_path:f.path,gh_sha:f.sha});
-      document.getElementById('ghStatus').textContent='✅ '+title;
-    }catch(e){}
-  }
-  await loadProject(proj.id);toast('✅ 导入完成');
+  var name=repo.split('/')[1]||repo;
+  dbA('projects').then(function(existing){
+    var proj=existing.find(function(p){return p.name===name});
+    if(proj)return proj;
+    var now=Date.now();
+    return dbP('projects',{name:name,description:'从GitHub导入: '+repo,created_at:now,updated_at:now,gh_repo:repo}).then(function(id){return dbG('projects',id)});
+  }).then(function(proj){
+    var order=0;
+    var chain=Promise.resolve();
+    ghFiles.forEach(function(f){
+      chain=chain.then(function(){
+        return fetch(f.download_url).then(function(r){return r.text()}).then(function(text){
+          var title=f.name.replace(/\.txt$/,'').replace(/^人间仍存_正骨版_\d+_?/,'').replace(/^第?\d+章[　\s]*/,'')||f.name;
+          return dbI('chapters','project_id',proj.id).then(function(existing){
+            var dup=existing.find(function(c){return c.source_file===f.name});
+            if(dup){dup.content=text;dup.word_count=text.replace(/[^\u4e00-\u9fff]/g,'').length;dup.gh_sha=f.sha;return dbP('chapters',dup)}
+            else return dbP('chapters',{project_id:proj.id,title:title,content:text,word_count:text.replace(/[^\u4e00-\u9fff]/g,'').length,sort_order:order++,source_file:f.name,gh_path:f.path,gh_sha:f.sha});
+          });
+        });
+      });
+    });
+    return chain.then(function(){return loadProject(proj.id)});
+  }).then(function(){toast('✅ 导入完成')}).catch(function(e){toast('❌ '+e.message)});
 }
-async function ghPush(){
+function ghPush(){
   if(!S.ch||!S.ch.gh_path)return toast('当前章节无GitHub关联');
-  const token=document.getElementById('ghToken').value.trim();
-  const repo=document.getElementById('ghRepo').value;
+  var token=document.getElementById('ghToken').value.trim();
+  var repo=document.getElementById('ghRepo').value;
   if(!token)return toast('请先连接');
-  try{
-    const content=document.getElementById('editor').value;
-    const b64=btoa(unescape(encodeURIComponent(content)));
-    const meta=await fetch('https://api.github.com/repos/'+repo+'/contents/'+S.ch.gh_path,{headers:{'Authorization':'token '+token}}).then(r=>r.json());
-    const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+S.ch.gh_path,{method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},body:JSON.stringify({message:'sync: '+S.ch.title,content:b64,sha:meta.sha})});
+  var content=document.getElementById('editor').value;
+  var b64=btoa(unescape(encodeURIComponent(content)));
+  fetch('https://api.github.com/repos/'+repo+'/contents/'+S.ch.gh_path,{headers:{'Authorization':'token '+token}}).then(function(r){return r.json()}).then(function(meta){
+    return fetch('https://api.github.com/repos/'+repo+'/contents/'+S.ch.gh_path,{method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},body:JSON.stringify({message:'sync: '+S.ch.title,content:b64,sha:meta.sha})});
+  }).then(function(r){
     if(!r.ok)throw new Error('HTTP '+r.status);
-    const res=await r.json();S.ch.gh_sha=res.content.sha;await saveCh();
-    document.getElementById('ghStatus2').textContent='✅ 已推送';toast('✅ 已推送到GitHub');
-  }catch(e){toast('❌ '+e.message);}
+    return r.json();
+  }).then(function(res){
+    S.ch.gh_sha=res.content.sha;saveCh();toast('✅ 已推送');
+  }).catch(function(e){toast('❌ '+e.message)});
 }
-async function ghSyncAll(){
+function ghSyncAll(){
   if(!S.proj)return toast('请先选择项目');
-  const token=document.getElementById('ghToken').value.trim();
-  const repo=document.getElementById('ghRepo').value||S.proj.gh_repo;
+  var token=document.getElementById('ghToken').value.trim();
+  var repo=document.getElementById('ghRepo').value||S.proj.gh_repo;
   if(!token)return toast('请先连接');
-  let pushed=0,skipped=0,failed=0;
-  for(const ch of S.chapters){
-    if(!ch.gh_path)continue;
-    try{
-      const content=ch.content||'';const b64=btoa(unescape(encodeURIComponent(content)));
-      const meta=await fetch('https://api.github.com/repos/'+repo+'/contents/'+ch.gh_path,{headers:{'Authorization':'token '+token}}).then(r=>r.json());
-      if(meta.sha===ch.gh_sha){skipped++;continue;}
-      const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+ch.gh_path,{method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},body:JSON.stringify({message:'sync: '+ch.title,content:b64,sha:meta.sha})});
-      if(!r.ok)throw new Error('HTTP '+r.status);
-      const res=await r.json();ch.gh_sha=res.content.sha;await dbP('chapters',ch);pushed++;
-    }catch(e){failed++;}
-  }
-  toast('✅ 同步完成: 推送'+pushed+' 跳过'+skipped+' 失败'+failed);
-  document.getElementById('ghStatus').textContent='✅ 同步完成: +'+pushed+' ='+skipped+' ✗'+failed;
+  var pushed=0,skipped=0,failed=0;
+  var chain=Promise.resolve();
+  S.chapters.forEach(function(ch){
+    if(!ch.gh_path)return;
+    chain=chain.then(function(){
+      var content=ch.content||'';var b64=btoa(unescape(encodeURIComponent(content)));
+      return fetch('https://api.github.com/repos/'+repo+'/contents/'+ch.gh_path,{headers:{'Authorization':'token '+token}}).then(function(r){return r.json()}).then(function(meta){
+        if(meta.sha===ch.gh_sha){skipped++;return;}
+        return fetch('https://api.github.com/repos/'+repo+'/contents/'+ch.gh_path,{method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},body:JSON.stringify({message:'sync: '+ch.title,content:b64,sha:meta.sha})}).then(function(r){
+          if(!r.ok)throw new Error('HTTP '+r.status);
+          return r.json();
+        }).then(function(res){ch.gh_sha=res.content.sha;return dbP('chapters',ch)}).then(function(){pushed++});
+      }).catch(function(){failed++});
+    });
+  });
+  chain.then(function(){toast('✅ 同步: +'+pushed+' ='+skipped+' ✗'+failed);document.getElementById('ghStatus').textContent='✅ 同步完成';}).catch(function(e){toast('❌ '+e.message)});
 }
 
-// ═══ Utils ═══
-function switchTab(tab,btn){
-  document.querySelectorAll('.sidebar-tabs button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  ['chapters','chars','world','notes'].forEach(t=>document.getElementById('tab-'+t).style.display=t===tab?'':'none');
-}
 function openModal(id){document.getElementById(id).classList.add('show');if(id==='projectModal')loadProjects();}
 function closeModal(id){document.getElementById(id).classList.remove('show');}
-function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3000);}
-function cloneId(v){const x={...(v||{})};delete x.id;return x;}
+function toast(msg){var el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(function(){el.classList.remove('show')},3000);}
 
 init();
 </script>
